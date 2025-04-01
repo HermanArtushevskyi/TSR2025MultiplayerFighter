@@ -86,6 +86,8 @@ namespace Mirror.Discovery
             response.uri = realUri.Uri;
 
             OnServerFound.Invoke(response);
+            Debug.Log("Server found: " + response.EndPoint.Address);
+            FoundAddress = response.EndPoint.Address.ToString();
         }
 
         #endregion

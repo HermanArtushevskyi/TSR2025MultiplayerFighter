@@ -21,6 +21,7 @@ public class ApplicationContext : DbContext
     
     public DbSet<User> Users { get; set; } = null;
     public DbSet<AuthenticationCode> AuthenticationCodes { get; set; } = null;
+    public DbSet<Lobby> Lobbies { get; set; } = null;
     
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

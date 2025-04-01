@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 7514082739025736126}
   - component: {fileID: 5409184632119202862}
   - component: {fileID: -9214810497843559131}
+  - component: {fileID: -9210255742443987067}
+  - component: {fileID: 4877043914043861990}
+  - component: {fileID: 4404153662513637624}
   m_Layer: 6
   m_Name: ProjectContext
   m_TagString: Untagged
@@ -74,3 +77,107 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4050aaa4b6d43e48910584805ac5f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _backendSettings:
+    Address: localhost
+    Port: 5000
+    RegisterPath: register
+    LoginPath: login
+    LogoutPath: logout
+    GetUserPath: getUser
+    AllLobbiesPath: Lobby/get
+    LobbyByNamePath: Lobby/getByName
+    CreateLobbyPath: Lobby/create
+    JoinLobbyPath: Lobby/join
+    LeaveLobbyPath: Lobby/leave
+    DeleteLobbyPath: Lobby/delete
+  _networkManager: {fileID: -9210255742443987067}
+  _transport: {fileID: 4877043914043861990}
+--- !u!114 &-9210255742443987067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877055689588932990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e57e47f827a4de193e22a2333993623, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dontDestroyOnLoad: 1
+  runInBackground: 1
+  headlessStartMode: 0
+  editorAutoStart: 0
+  sendRate: 60
+  offlineScene: Assets/_Project/Scenes/Menu/MenuScene.unity
+  onlineScene: Assets/_Project/Scenes/FightScene/FightScene.unity
+  offlineSceneLoadDelay: 0
+  transport: {fileID: 4877043914043861990}
+  networkAddress: localhost
+  maxConnections: 100
+  disconnectInactiveConnections: 0
+  disconnectInactiveTimeout: 60
+  authenticator: {fileID: 0}
+  playerPrefab: {fileID: 6343213069835446508, guid: fc9bb3f1b4baa1e4ca5354bf74190333, type: 3}
+  autoCreatePlayer: 1
+  playerSpawnMethod: 1
+  spawnPrefabs:
+  - {fileID: 3483805777512628924, guid: ec0401158a71c6e4bb39af4fd52ca3eb, type: 3}
+  exceptionsDisconnect: 0
+  snapshotSettings:
+    bufferTimeMultiplier: 2
+    bufferLimit: 32
+    catchupNegativeThreshold: -1
+    catchupPositiveThreshold: 1
+    catchupSpeed: 0.019999999552965164
+    slowdownSpeed: 0.03999999910593033
+    driftEmaDuration: 1
+    dynamicAdjustment: 1
+    dynamicAdjustmentTolerance: 1
+    deliveryTimeEmaDuration: 2
+  evaluationMethod: 0
+  evaluationInterval: 3
+  timeInterpolationGui: 0
+--- !u!114 &4877043914043861990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877055689588932990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  port: 7777
+  DualMode: 1
+  NoDelay: 1
+  Interval: 10
+  Timeout: 10000
+  RecvBufferSize: 7361536
+  SendBufferSize: 7361536
+  FastResend: 2
+  ReceiveWindowSize: 4096
+  SendWindowSize: 4096
+  MaxRetransmit: 40
+  MaximizeSocketBuffers: 1
+  ReliableMaxMessageSize: 297433
+  UnreliableMaxMessageSize: 1194
+  debugLog: 1
+  statisticsGUI: 0
+  statisticsLog: 0
+--- !u!114 &4404153662513637624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877055689588932990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offsetX: 900
+  offsetY: 0

@@ -27,7 +27,7 @@ namespace _Project.CodeBase.Runtime.UI.MainWindow
             _container.Bind<MainWindowView>().FromInstance(view.GetComponentInChildren<MainWindowView>()).AsSingle();
             MainWindowPresenter presenter = _container.Instantiate<MainWindowPresenter>();
             presenter.InitializeUnit();
-            _container.Bind<MainWindowPresenter>().FromInstance(presenter).AsSingle();
+            _container.Bind<MainWindowPresenter>().FromInstance(presenter).AsCached();
             return presenter;
         }
     }

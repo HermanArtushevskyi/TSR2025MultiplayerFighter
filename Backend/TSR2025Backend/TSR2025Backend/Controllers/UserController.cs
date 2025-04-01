@@ -8,7 +8,7 @@ namespace TSR2025Backend.Controllers;
 [Route("[controller]")]
 public class UserController : ControllerBase
 {
-    [HttpPost("~/register")]
+    [HttpGet("~/register")]
     public ActionResult<string> Register(string login, string password)
     {
         bool userWithLoginExists = false;
@@ -56,7 +56,7 @@ public class UserController : ControllerBase
     }
 
     [HttpGet("~/getUser")]
-    public ActionResult<User> GetUserByCode(string authenticationCode)
+    public ActionResult<UserDTO> GetUserByCode(string authenticationCode)
     {
         AuthenticationCode code = ApplicationContext.Instance.AuthenticationCodes.FirstOrDefault(code => code.Value == authenticationCode);
         if (code == null)
@@ -65,7 +65,9 @@ public class UserController : ControllerBase
         }
 
         User user = ApplicationContext.Instance.Users.FirstOrDefault(user => user.Id == code.UserId);
-        return Ok(user);
+        UserDTO dto = new();
+        dto.Login = user.Login;
+        return Ok(dto);
     }
 
     [HttpPost("~/logout")]

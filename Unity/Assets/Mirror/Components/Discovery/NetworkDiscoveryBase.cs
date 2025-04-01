@@ -27,6 +27,7 @@ namespace Mirror.Discovery
         [Tooltip("If true, broadcasts a discovery request every ActiveDiscoveryInterval seconds")]
         public bool enableActiveDiscovery = true;
 
+        [HideInInspector] public string FoundAddress;
         // broadcast address needs to be configurable on iOS:
         // https://github.com/vis2k/Mirror/pull/3255
         [Tooltip("iOS may require LAN IP address here (e.g. 192.168.x.x), otherwise leave blank.")]
